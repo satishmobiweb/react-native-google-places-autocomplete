@@ -63,7 +63,7 @@ const defaultStyles = {
 
 const GooglePlacesAutocomplete = React.createClass({
 
-  propTypes: {
+  propTypes: {   
     placeholder: React.PropTypes.string,
     placeholderTextColor: React.PropTypes.string,
     onPress: React.PropTypes.func,
@@ -172,6 +172,7 @@ const GooglePlacesAutocomplete = React.createClass({
 
   componentWillReceiveProps(nextProps) {
     if (nextProps.listViewDisplayed !== 'auto') {
+      this.setState({text:this.props.setvalue});
       this.setState({
         listViewDisplayed: nextProps.listViewDisplayed,
       });
